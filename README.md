@@ -1,6 +1,6 @@
 # Ethercheck
 
-Machine learning based wallet reputation on the blockchain.
+Machine learning backed, wallet reputation for the Ethereum blockchain.
 
 ## Why Ethercheck?
 
