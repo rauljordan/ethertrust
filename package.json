@@ -1,16 +1,19 @@
 {
-  "name": "ethercheck.io",
+  "name": "ethertrust.io",
   "version": "1.0.0",
   "description": "",
   "main": "truffle.js",
   "scripts": {
-    "scrape": "babel-node --presets es2015,stage-2 scrapers/index.js"
+    "scrape": "babel-node scrapers/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1"
+    "babel-preset-stage-2": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.82.0",
+    "request-promise": "^4.2.2"
   }
 }
