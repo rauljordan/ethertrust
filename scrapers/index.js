@@ -9,9 +9,9 @@ import fs from 'fs';
 
   writableStream.on('finish', () => console.log('done'));
   csvStream.pipe(writableStream);
-  for (let i = 1, i < 10; i++) {
+  for (let i = 1; i < 20000; i++) {
     await etherscan(i, csvStream);
-    console.log(`Ran on Page ${index}`);
+    console.log(`Ran on Page ${i}`);
   }
   csvStream.end();
 })();

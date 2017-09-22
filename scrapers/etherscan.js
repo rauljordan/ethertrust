@@ -1,5 +1,6 @@
 import cheerio from 'cheerio';
 import rp from 'request-promise';
+import Sugar from 'sugar'
 
 export default async function etherscan(index, csvStream) {
   const url = index === 1 ? 'https://etherscan.io/txs' : `https://etherscan.io/txs?p=${index}`;
@@ -11,7 +12,13 @@ export default async function etherscan(index, csvStream) {
 
     const hash = $(cols[0]).find('a').text();
     const block = $(cols[1]).find('a').text();
-    const age = $(cols[2]).find('span').text().trim();
+    let age = $(cols[2]).find('span').text().trim();
+    if (age.indexOf('secs') > -1 || age.indexOf('min') > -1) {
+      age = new Date().toString();
+    }
+    else {
+      age = Sugar.Date.create(age).toString();
+    }
 
     const fromText = $(cols[3]).find('a').text();
     const fromHref = $(cols[3]).find('a').attr('href');
