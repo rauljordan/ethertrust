@@ -2,3 +2,5 @@ data
 .ipynb_checkpoints
 *.swp
 .DS_Store
+*.log
+node_modules
